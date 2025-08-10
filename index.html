@@ -66,8 +66,19 @@
     /* Lightbox */
     .lightbox{position:fixed;inset:0;background:rgba(3,8,16,.9);display:none;align-items:center;justify-content:center;z-index:99}
     .lightbox.open{display:flex}
-    .lightbox-inner{max-width:1000px;width:94%;position:relative}
-    .lightbox img{width:100%;height:auto;border-radius:12px;border:1px solid #2a3447;background:#0b1018}
+    .lightbox-inner{max-width:min(1000px,94vw);max-height:92vh;width:auto;position:relative}
+.lightbox img{
+  display:block;
+  max-width:90vw;
+  max-height:88vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  object-position:center center;
+  border-radius:12px;
+  border:1px solid #2a3447;
+  background:#0b1018;
+}
     .nav{position:absolute;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid #2a3447;border-radius:8px;background:#0e1522;cursor:pointer}
     .nav:hover{border-color:#39507a}
     .nav.prev{left:-54px}.nav.next{right:-54px}
@@ -119,7 +130,7 @@
       <div class="hero">
         <div class="reveal in">
           <h1>$ whoami<br/>Ahmad Azam — Tech Lead & Senior iOS Engineer</h1>
-          <p class="muted">I build high-impact, scalable digital products (iOS, Fintech, AI). Leadership across strategy, architecture, and delivery.</p>
+          <p class="muted">I build high-impact, scalable digital products (iOS, Fintech, Health, AI). Leadership across strategy, architecture, and delivery.</p>
 
           <div class="kpis">
             <span class="chip">⌁ iOS (Swift/SwiftUI)</span>
@@ -130,12 +141,14 @@
           <div class="counters">
             <div class="counter"><div class="num" data-count="40" data-suffix="+">0</div><small>Apps Shipped</small></div>
             <div class="counter"><div class="num" data-count="6" data-suffix="+">0</div><small>Years Experience</small></div>
-            <div class="counter"><div class="num" data-count="1000000" data-format="compact">0</div><small>Users Impacted</small></div>
+            <div class="counter"><div class="num" data-count="3000000" data-format="compact">0</div><small>Users Impacted</small></div>
           </div>
 
           <div class="stack" style="margin-top:14px">
             <span class="s">Swift</span><span class="s">SwiftUI</span><span class="s">UIKit</span><span class="s">Combine</span><span class="s">CoreData</span>
-            <span class="s">Python</span><span class="s">Java • Spring Boot</span><span class="s">Firebase</span><span class="s">AWS</span><span class="s">Appium/Selenium</span>
+            <span class="s">Python</span><span class="s">Java • Spring Boot</span> <span class="s">AWS</span> <span class="s">Machine Learning</span> <span class="s">LLM</span> 
+            <span class="s">Firebase</span><span class="s">AWS</span><span class="s">Appium/Selenium</span> <span class="s">Git</span> <span class="s">FastLane</span> <span class="s">CI/CD</span>
+            <span class="s">Databases</span>
           </div>
         </div>
         <div class="reveal">
@@ -148,13 +161,14 @@
         <h2 class="sec-title"><span class="hash">#</span> about</h2>
         <div class="grid">
           <div class="card">
-            <p>Position holder in BS Software Engineering (PUCIT, CGPA 3.84/4). Award-winning iOS engineer shipping products across fintech, health & fitness, and AI-powered tools. Open-source contributor (NetUtils).</p>
+            <p>Position holder in BS Software Engineering (Punjab University). Award-winning iOS engineer shipping products across fintech, health & fitness, and AI-powered tools. Open-source contributor.</p>
             <p class="muted">Awards: Vice Chancellor Honour (2017, 2019), Outstanding Performance (i2c, 2021-22).</p>
           </div>
           <div class="card">
             <p><strong>Currently:</strong> Lead Software Engineer (Vora IQ).</p>
-            <p><strong>Previously:</strong> Senior iOS Developer & Mobile Automation Lead (i2c inc.). Backend (SSI): Spring Boot, Python, AWS, ETL.</p>
-            <div class="stack"><span class="s">Swift/SwiftUI</span><span class="s">UIKit</span><span class="s">CoreML/LLM APIs</span><span class="s">REST</span><span class="s">Firebase</span><span class="s">AWS</span></div>
+            <p><strong>Previously:</strong> Senior iOS Developer & Mobile Automation Lead (i2c inc.). FullStack Developer (SSI)</p>
+            <div class="stack"><span class="s">Swift/SwiftUI</span><span class="s">UIKit</span><span class="s">CoreML/LLM APIs</span><span class="s">REST</span><span class="s">Firebase</span><span class="s">AWS</span>
+            <span class="s">Java • Spring Boot</span> <span class="s">MongoDb</span> <span class="s">Microservices</span></div>
           </div>
         </div>
       </section>
@@ -302,7 +316,7 @@
           <div class="card">
             <p><strong>Consultancy & Development</strong></p>
             <p>Provide end-to-end iOS consulting, architecture reviews, performance tuning, and feature development for global clients on Upwork.</p>
-            <p class="muted">Profile: <a href="https://www.upwork.com/freelancers/ahmadazam950?p=1455225905912270848" target="_blank" rel="noopener">Upwork/ahmadazam950 ↗</a></p>
+            <p class="muted">Profile: <a href="https://www.upwork.com/freelancers/ahmadazam950" target="_blank" rel="noopener">Upwork/ahmadazam950 ↗</a></p>
             <div class="stack"><span class="s">Swift/SwiftUI</span><span class="s">Refactoring</span><span class="s">Architecture</span><span class="s">Code Reviews</span><span class="s">App Store</span></div>
           </div>
           <div class="reviews" id="reviews"></div>
