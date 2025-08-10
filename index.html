@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ahmad Azam — Tech Lead & Senior iOS Engineer</title>
+  <meta name="description" content="Senior Software Engineer & Tech Lead — 40+ apps built. Fintech, AI, iOS (Swift/SwiftUI), Product & Team Leadership." />
+  <meta property="og:title" content="Ahmad Azam — Tech Lead & Senior iOS Engineer" />
+  <meta property="og:description" content="6+ years, 40+ apps. iOS • Fintech • AI." />
+  <meta property="og:image" content="assets/og.png" />
+
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0c0f14;--panel:#11161e;--ink:#dbe2f2;--muted:#9aa8c7;--accent:#00e5a8;--accent-2:#6aa7ff;--warning:#ffd166;--red:#ff6b6b;}
+    *{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;line-height:1.6}
+    a{color:var(--accent);text-decoration:none} a:hover{opacity:.9}
+    .container{max-width:1100px;margin:0 auto;padding:32px 20px}
+    .terminal{border:1px solid #1b2230;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,.03), transparent),var(--panel);box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.02);overflow:hidden}
+    .term-title{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid #1b2230;background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.1));font-size:12px;color:var(--muted)}
+    .dots{display:flex;gap:8px;margin-right:8px}.dot{width:10px;height:10px;border-radius:50%}.dot.red{background:#ff5f56}.dot.yellow{background:#ffbd2e}.dot.green{background:#27c93f}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;padding:24px}
+    .hero h1{font-size:28px;line-height:1.25;margin:0 0 8px}
+    .muted{color:var(--muted)} .kpis{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px}
+    .chip{border:1px dashed #2a3447;padding:8px 10px;border-radius:8px;color:var(--muted);font-size:12px}
+
+    .counters{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+    .counter{min-width:150px;border:1px solid #2a3447;border-radius:10px;padding:10px 12px;background:#0e1522}
+    .counter .num{font-weight:800;font-size:20px} .counter small{color:var(--muted)}
+    .avatar{width:100%;border-radius:12px;border:1px solid #1b2230;background:#0b1018;object-fit:cover}
+
+    section{margin-top:38px} .sec-title{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--accent);letter-spacing:.02em;margin:0 0 14px}
+    .sec-title .hash{color:var(--accent-2)} .card{border:1px solid #1b2230;border-radius:12px;background:var(--panel);padding:18px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px} .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid #2a3447;color:var(--ink)}
+    .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px} .stack .s{font-size:12px;padding:4px 8px;border-radius:6px;background:#0e1522;border:1px solid #2a3447;color:var(--muted)}
+
+    .project{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    .proj-title{margin:0 0 6px;font-size:18px} .proj-links{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 10px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid #2a3447;border-radius:8px;color:var(--ink);font-size:13px;background:#0e1522}
+    .btn:hover{border-color:#39507a} .btn svg{width:16px;height:16px}
+    .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .thumbs img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:10px;border:1px solid #1b2230;cursor:pointer;transition:transform .15s}
+    .thumbs img:hover{transform:scale(1.02)}
+
+    .lightbox{position:fixed;inset:0;background:rgba(3,8,16,.9);display:none;align-items:center;justify-content:center;z-index:99}
+    .lightbox.open{display:flex} .lightbox-inner{max-width:1000px;width:94%;position:relative}
+    .lightbox img{width:100%;height:auto;border-radius:12px;border:1px solid #2a3447;background:#0b1018}
+    .nav{position:absolute;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid #2a3447;border-radius:8px;background:#0e1522;cursor:pointer}
+    .nav:hover{border-color:#39507a} .nav.prev{left:-54px}.nav.next{right:-54px}
+    .close{position:absolute;top:-52px;right:0;display:flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid #2a3447;border-radius:8px;background:#0e1522;cursor:pointer}
+
+    .testi{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .quote{border-left:3px solid var(--accent);padding-left:12px}
+    .stars{color:#ffd166;letter-spacing:2px}
+    .scroller{display:flex;gap:12px;overflow:auto;padding-bottom:6px}
+    .scroller .q{min-width:320px;border:1px solid #2a3447;border-radius:10px;padding:12px;background:#0e1522}
+
+    .reveal{opacity:0;transform:translateY(10px);transition:all .5s ease} .reveal.in{opacity:1;transform:none}
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr;gap:18px} .project{grid-template-columns:1fr;gap:14px}
+      .grid{grid-template-columns:1fr} .grid-3{grid-template-columns:1fr 1fr}
+      .testi{grid-template-columns:1fr} .nav.prev{left:0}.nav.next{right:0}
+    }
+    @media (max-width: 560px){ .grid-3{grid-template-columns:1fr} .kpis{gap:10px} }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="terminal">
+      <div class="term-title">
+        <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+        ~/portfolio — bash — <span class="muted">git:(main) ✦</span>
+      </div>
+
+      <div class="hero">
+        <div class="reveal in">
+          <h1>$ whoami<br/>Ahmad Azam — Tech Lead & Senior iOS Engineer</h1>
+          <p class="muted">I build high-impact, scalable digital products (iOS, Fintech, AI). Leadership across strategy, architecture, and delivery.</p>
+          <div class="kpis"><span class="chip">⌁ iOS (Swift/SwiftUI)</span><span class="chip">⌁ Fintech • AI • CI/CD</span><span class="chip">⌁ Open Source: NetUtils</span></div>
+          <div class="counters">
+            <div class="counter"><div class="num" data-count="40" data-suffix="+">0</div><small>Apps Shipped</small></div>
+            <div class="counter"><div class="num" data-count="6" data-suffix="+">0</div><small>Years Experience</small></div>
+            <div class="counter"><div class="num" data-count="1000000" data-format="compact">0</div><small>Users Impacted</small></div>
+          </div>
+          <div class="stack" style="margin-top:14px">
+            <span class="s">Swift</span><span class="s">SwiftUI</span><span class="s">UIKit</span><span class="s">Combine</span><span class="s">CoreData</span>
+            <span class="s">Python</span><span class="s">Java • Spring Boot</span><span class="s">Firebase</span><span class="s">AWS</span><span class="s">Appium/Selenium</span>
+          </div>
+        </div>
+        <div class="reveal"><img class="avatar" src="assets/avatar.jpg" alt="Ahmad Azam — Professional Photo" /></div>
+      </div>
+
+      <section id="leadership" class="reveal">
+        <h2 class="sec-title"><span class="hash">#</span> leadership & strategy</h2>
+        <div class="card">
+          <p><span class="badge">Lead · iOS & Automation</span></p>
+          <p>Founded a cross-platform mobile automation framework from scratch, established CI/CD, code quality gates, and modern patterns (MVVM, composition, flow coordinators, prudent singleton use). Mentored engineers and partnered with product, security, and backend to ship reliably.</p>
+          <p>Fintech: led secure, compliance-aligned modules (onboarding, KYC, payments, account services) serving large cardholder bases.</p>
+          <div class="stack"><span class="s">CI/CD</span><span class="s">Architecture</span><span class="s">Code Review</span><span class="s">Security</span><span class="s">App Store Ops</span><span class="s">Mentorship</span></div>
+        </div>
+      </section>
+
+      <section id="about" class="reveal">
+        <h2 class="sec-title"><span class="hash">#</span> about</h2>
+        <div class="grid">
+          <div class="card">
+            <p>Position holder in BS Software Engineering (PUCIT, CGPA 3.84/4). Award-winning iOS engineer shipping products across fintech, health & fitness, and AI-powered tools. Open-source contributor (NetUtils).</p>
+            <p class="muted">Awards: Vice Chancellor Honour (2017, 2019), Outstanding Performance (i2c, 2021-22).</p>
+          </div>
+          <div class="card">
+            <p><strong>Currently:</strong> Sr. iOS Developer & Team Lead (HellaTek).</p>
+            <p><strong>Previously:</strong> Sr. iOS Developer & Mobile Automation Lead (i2c inc.). Backend (SSI): Spring Boot, Python, AWS, ETL.</p>
+            <div class="stack"><span class="s">Swift/SwiftUI</span><span class="s">UIKit</span><span class="s">CoreML/LLM APIs</span><span class="s">REST</span><span class="s">Firebase</span><span class="s">AWS</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="reveal">
+        <h2 class="sec-title"><span class="hash">#</span> featured projects</h2>
+
+        <div class="card project" data-gallery="direct-express">
+          <div>
+            <h3 class="proj-title">Direct Express — Fintech</h3>
+            <p class="muted">Lead iOS modules for a high-traffic, security-critical cardholder app: enrolment, account services, payments. Compliance-first, performance-driven.</p>
+            <div class="proj-links">
+              <a class="btn" href="https://apps.apple.com/us/app/direct-express/id1499348004" target="_blank" rel="noopener" aria-label="App Store">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 13.2c0-2.6 2.1-3.9 2.2-3.9-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.6 1.3 10.1.9 1.3 2 2.7 3.5 2.7 1.4 0 1.9-.9 3.5-.9 1.6 0 2 .9 3.4.9 1.4 0 2.3-1.3 3.2-2.6 1-1.5 1.4-3 1.4-3.1-.1 0-2.7-1-2.7-3.8zM15.1 4.6c.7-.9 1.2-2.1 1.1-3.3-1.1.1-2.4.8-3.1 1.7-.7.8-1.3 2.1-1.1 3.2 1.2.1 2.4-.7 3.1-1.6z"/></svg> App Store
+              </a>
+            </div>
+            <div class="stack"><span class="s">Swift</span><span class="s">UIKit</span><span class="s">Security</span><span class="s">CI/CD</span></div>
+          </div>
+          <div><div class="thumbs"><img src="assets/direct-express/1.jpg" alt="Direct Express 1" data-idx="0"><img src="assets/direct-express/2.jpg" alt="Direct Express 2" data-idx="1"><img src="assets/direct-express/3.jpg" alt="Direct Express 3" data-idx="2"></div></div>
+        </div>
+
+        <div class="card project" data-gallery="cbtc">
+          <div>
+            <h3 class="proj-title">CBTC Credit Card — Fintech</h3>
+            <p class="muted">Lead iOS development of key credit card features: onboarding, card controls, transaction views, and secure service flows.</p>
+            <div class="proj-links">
+              <a class="btn" href="https://apps.apple.com/us/app/cbtc-credit-card/id1561216110" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 13.2c0-2.6 2.1-3.9 2.2-3.9-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.6 1.3 10.1.9 1.3 2 2.7 3.5 2.7 1.4 0 1.9-.9 3.5-.9 1.6 0 2 .9 3.4.9 1.4 0 2.3-1.3 3.2-2.6 1-1.5 1.4-3 1.4-3.1-.1 0-2.7-1-2.7-3.8zM15.1 4.6c.7-.9 1.2-2.1 1.1-3.3-1.1.1-2.4.8-3.1 1.7-.7.8-1.3 2.1-1.1 3.2 1.2.1 2.4-.7 3.1-1.6z"/></svg> App Store
+              </a>
+            </div>
+            <div class="stack"><span class="s">Swift</span><span class="s">UIKit</span><span class="s">KYC</span><span class="s">Payments</span></div>
+          </div>
+          <div><div class="thumbs"><img src="assets/cbtc/1.jpg" alt="CBTC 1" data-idx="0"><img src="assets/cbtc/2.jpg" alt="CBTC 2" data-idx="1"><img src="assets/cbtc/3.jpg" alt="CBTC 3" data-idx="2"></div></div>
+        </div>
+
+        <div class="card project" data-gallery="flywheel">
+          <div>
+            <h3 class="proj-title">Flywheel Digital — Platform Work</h3>
+            <p class="muted">Contributions to resilient integrations and performance-oriented platform pieces for a global digital commerce leader.</p>
+            <div class="proj-links"><a class="btn" href="https://www.flywheeldigital.com/" target="_blank" rel="noopener">Website ↗</a></div>
+            <div class="stack"><span class="s">APIs</span><span class="s">Reliability</span><span class="s">Perf</span></div>
+          </div>
+          <div><div class="thumbs"><img src="assets/flywheel/1.jpg" alt="Flywheel 1" data-idx="0"><img src="assets/flywheel/2.jpg" alt="Flywheel 2" data-idx="1"><img src="assets/flywheel/3.jpg" alt="Flywheel 3" data-idx="2"></div></div>
+        </div>
+
+        <div class="card project" data-gallery="netutils">
+          <div>
+            <h3 class="proj-title">NetUtils — Advanced Network Utilities</h3>
+            <p class="muted">Open-source iOS/macOS diagnostics. Contributed features and UX polish used by IT pros worldwide.</p>
+            <div class="proj-links">
+              <a class="btn" href="https://apps.apple.com/us/app/netutils-network-utilities/id1434360325" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 13.2c0-2.6 2.1-3.9 2.2-3.9-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.6 1.3 10.1.9 1.3 2 2.7 3.5 2.7 1.4 0 1.9-.9 3.5-.9 1.6 0 2 .9 3.4.9 1.4 0 2.3-1.3 3.2-2.6 1-1.5 1.4-3 1.4-3.1-.1 0-2.7-1-2.7-3.8zM15.1 4.6c.7-.9 1.2-2.1 1.1-3.3-1.1.1-2.4.8-3.1 1.7-.7.8-1.3 2.1-1.1 3.2 1.2.1 2.4-.7 3.1-1.6z"/></svg> App Store</a>
+              <a class="btn" href="https://github.com/twodayslate/NetUtils" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2 .37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.94-.01 2.21 0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg> GitHub</a>
+            </div>
+            <div class="stack"><span class="s">Swift</span><span class="s">Cocoa</span><span class="s">Networking</span></div>
+          </div>
+          <div><div class="thumbs"><img src="assets/netutils/1.jpg" alt="NetUtils 1" data-idx="0"><img src="assets/netutils/2.jpg" alt="NetUtils 2" data-idx="1"><img src="assets/netutils/3.jpg" alt="NetUtils 3" data-idx="2"></div></div>
+        </div>
+
+        <div class="card project" data-gallery="smartai">
+          <div>
+            <h3 class="proj-title">Smart AI Actions — Productivity with LLMs</h3>
+            <p class="muted">AI-powered automation app built with SwiftUI & Combine. Natural-language actions for power users.</p>
+            <div class="proj-links"><a class="btn" href="https://apps.apple.com/us/app/smart-ai-actions/id1659310170" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 13.2c0-2.6 2.1-3.9 2.2-3.9-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.6 1.3 10.1.9 1.3 2 2.7 3.5 2.7 1.4 0 1.9-.9 3.5-.9 1.6 0 2 .9 3.4.9 1.4 0 2.3-1.3 3.2-2.6 1-1.5 1.4-3 1.4-3.1-.1 0-2.7-1-2.7-3.8zM15.1 4.6c.7-.9 1.2-2.1 1.1-3.3-1.1.1-2.4.8-3.1 1.7-.7.8-1.3 2.1-1.1 3.2 1.2.1 2.4-.7 3.1-1.6z"/></svg> App Store</a></div>
+            <div class="stack"><span class="s">SwiftUI</span><span class="s">LLM APIs</span><span class="s">Combine</span></div>
+          </div>
+          <div><div class="thumbs"><img src="assets/smart-ai/1.jpg" alt="Smart AI 1" data-idx="0"><img src="assets/smart-ai/2.jpg" alt="Smart AI 2" data-idx="1"><img src="assets/smart-ai/3.jpg" alt="Smart AI 3" data-idx="2"></div></div>
+        </div>
+
+        <div class="card project" data-gallery="acft">
+          <div>
+            <h3 class="proj-title">ACFT Calculator & Resources</h3>
+            <p class="muted">Niche fitness utility for accurate ACFT scoring and guidance. Performance-tuned for instant results.</p>
+            <div class="proj-links"><a class="btn" href="https://apps.apple.com/us/app/acft-calculator-and-resources/id1439376176" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 13.2c0-2.6 2.1-3.9 2.2-3.9-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.6 1.3 10.1.9 1.3 2 2.7 3.5 2.7 1.4 0 1.9-.9 3.5-.9 1.6 0 2 .9 3.4.9 1.4 0 2.3-1.3 3.2-2.6 1-1.5 1.4-3 1.4-3.1-.1 0-2.7-1-2.7-3.8zM15.1 4.6c.7-.9 1.2-2.1 1.1-3.3-1.1.1-2.4.8-3.1 1.7-.7.8-1.3 2.1-1.1 3.2 1.2.1 2.4-.7 3.1-1.6z"/></svg> App Store</a></div>
+            <div class="stack"><span class="s">Swift</span><span class="s">UIKit</span><span class="s">Perf</span></div>
+          </div>
+          <div><div class="thumbs"><img src="assets/acft/1.jpg" alt="ACFT 1" data-idx="0"><img src="assets/acft/2.jpg" alt="ACFT 2" data-idx="1"><img src="assets/acft/3.jpg" alt="ACFT 3" data-idx="2"></div></div>
+        </div>
+
+        <div class="card project" data-gallery="magicneedle">
+          <div>
+            <h3 class="proj-title">Magic Needle — iOS + macOS</h3>
+            <p class="muted">Premium cross-stitch design suite with live preview, editing, and export across Apple platforms.</p>
+            <div class="proj-links"><a class="btn" href="https://apps.apple.com/us/app/magic-needle-cross-stitch/id1323730066" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 13.2c0-2.6 2.1-3.9 2.2-3.9-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.6 1.3 10.1.9 1.3 2 2.7 3.5 2.7 1.4 0 1.9-.9 3.5-.9 1.6 0 2 .9 3.4.9 1.4 0 2.3-1.3 3.2-2.6 1-1.5 1.4-3 1.4-3.1-.1 0-2.7-1-2.7-3.8zM15.1 4.6c.7-.9 1.2-2.1 1.1-3.3-1.1.1-2.4.8-3.1 1.7-.7.8-1.3 2.1-1.1 3.2 1.2.1 2.4-.7 3.1-1.6z"/></svg> App Store</a></div>
+            <div class="stack"><span class="s">iOS</span><span class="s">macOS</span><span class="s">Graphics</span></div>
+          </div>
+          <div><div class="thumbs"><img src="assets/magic-needle/1.jpg" alt="Magic Needle 1" data-idx="0"><img src="assets/magic-needle/2.jpg" alt="Magic Needle 2" data-idx="1"><img src="assets/magic-needle/3.jpg" alt="Magic Needle 3" data-idx="2"></div></div>
+        </div>
+      </section>
+
+      <section id="consulting" class="reveal">
+        <h2 class="sec-title"><span class="hash">#</span> consulting on upwork</h2>
+        <div class="testi">
+          <div class="card">
+            <p><strong>Consultancy & Development</strong></p>
+            <p>Provide end-to-end iOS consulting, architecture reviews, performance tuning, and feature development for global clients via Upwork.</p>
+            <p class="muted">Profile: <a href="https://www.upwork.com/freelancers/ahmadazam950?p=1455225905912270848" target="_blank" rel="noopener">Upwork/ahmadazam950 ↗</a></p>
+            <div class="stack"><span class="s">Swift/SwiftUI</span><span class="s">Refactoring</span><span class="s">Architecture</span><span class="s">Code Reviews</span><span class="s">App Store</span></div>
+          </div>
+          <div class="card">
+            <p><strong>Client Reviews</strong></p>
+            <div class="scroller" id="reviews"></div>
+            <small class="muted">Selected comments from recent engagements. (Paste exact quotes in the JSON below.)</small>
+          </div>
+        </div>
+      </section>
+
+      <section id="awards" class="reveal">
+        <h2 class="sec-title"><span class="hash">#</span> awards & recognition</h2>
+        <div class="grid">
+          <div class="card"><p><strong>Outstanding Performance Award</strong> — i2c (2021–22)</p><p class="muted">Recognized for leading automation and delivering on critical deadlines.</p></div>
+          <div class="card"><p><strong>VC Honour (2017, 2019)</strong> — Punjab University</p><p class="muted">Top GPA & distinction; position holder in BS Software Engineering.</p></div>
+        </div>
+      </section>
+
+      <section id="contact" class="reveal" style="margin-bottom:22px">
+        <h2 class="sec-title"><span class="hash">#</span> contact</h2>
+        <div class="card"><p>Email: <a href="mailto:ahmadazam950@gmail.com">ahmadazam950@gmail.com</a></p><p>LinkedIn: <a href="https://www.linkedin.com/in/ahmad-azam/" target="_blank" rel="noopener">linkedin.com/in/ahmad-azam</a> — GitHub: <a href="https://github.com/AhmadAzam" target="_blank" rel="noopener">github.com/AhmadAzam</a></p></div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries)=>{entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); observer.unobserve(e.target);} });},{threshold:.12}); document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+    const galleries = {
+      "direct-express": ["assets/direct-express/1.jpg","assets/direct-express/2.jpg","assets/direct-express/3.jpg"],
+      "cbtc": ["assets/cbtc/1.jpg","assets/cbtc/2.jpg","assets/cbtc/3.jpg"],
+      "flywheel": ["assets/flywheel/1.jpg","assets/flywheel/2.jpg","assets/flywheel/3.jpg"],
+      "netutils": ["assets/netutils/1.jpg","assets/netutils/2.jpg","assets/netutils/3.jpg"],
+      "smartai": ["assets/smart-ai/1.jpg","assets/smart-ai/2.jpg","assets/smart-ai/3.jpg"],
+      "acft": ["assets/acft/1.jpg","assets/acft/2.jpg","assets/acft/3.jpg"],
+      "magicneedle": ["assets/magic-needle/1.jpg","assets/magic-needle/2.jpg","assets/magic-needle/3.jpg"]
+    };
+
+    const lb = document.createElement('div'); lb.className = 'lightbox'; lb.innerHTML = `<div class="lightbox-inner"><button class="close" aria-label="Close">✕</button><button class="nav prev" aria-label="Previous">◀</button><img alt=""><button class="nav next" aria-label="Next">▶</button></div>`; document.body.appendChild(lb);
+    let currentKey=null, currentIdx=0; const imgEl = lb.querySelector('img');
+    const show = (key, idx)=>{ const list = galleries[key]; if(!list) return; currentKey = key; currentIdx = (idx+list.length)%list.length; imgEl.src = list[currentIdx]; lb.classList.add('open'); };
+    const hide = ()=> lb.classList.remove('open');
+    document.querySelectorAll('.project').forEach(card=>{ const key = card.getAttribute('data-gallery'); card.querySelectorAll('.thumbs img').forEach(thumb=>{ thumb.addEventListener('click', ()=> show(key, parseInt(thumb.dataset.idx||'0',10))); }); });
+    lb.querySelector('.close').addEventListener('click', hide);
+    lb.addEventListener('click', (e)=>{ if(e.target===lb) hide(); });
+    lb.querySelector('.nav.prev').addEventListener('click', ()=> show(currentKey, currentIdx-1));
+    lb.querySelector('.nav.next').addEventListener('click', ()=> show(currentKey, currentIdx+1));
+    document.addEventListener('keydown', (e)=>{ if(!lb.classList.contains('open')) return; if(e.key==='Escape') hide(); if(e.key==='ArrowLeft') show(currentKey, currentIdx-1); if(e.key==='ArrowRight') show(currentKey, currentIdx+1); });
+
+    // Animated counters
+    const counters = document.querySelectorAll('.num'); const fmtCompact = Intl.NumberFormat('en', {notation:'compact'});
+    const animateCounter = (el)=>{ const target = parseInt(el.dataset.count||'0',10); const suffix = el.dataset.suffix||''; const compact = el.dataset.format==='compact';
+      let cur = 0; const steps = 40; const inc = Math.max(1, Math.round(target/steps));
+      const tick = ()=> { cur = Math.min(target, cur + inc); el.textContent = (compact? fmtCompact.format(cur) : cur) + (cur===target ? suffix : ''); if(cur < target) requestAnimationFrame(tick); };
+      tick();
+    };
+    counters.forEach(animateCounter);
+
+    // Upwork reviews placeholder (replace with your real quotes)
+    const upworkReviews = [
+      { stars:5, text:"Paste a client quote here about speed, communication, or code quality.", client:"Client, Upwork" },
+      { stars:5, text:"Paste another short testimonial here (architecture, SwiftUI expertise, delivery on time).", client:"Client, Upwork" },
+      { stars:4, text:"Optional third review. Keep it 15–25 words for scannability.", client:"Client, Upwork" }
+    ];
+    const reviewsEl = document.getElementById('reviews');
+    upworkReviews.forEach(r=>{ const el = document.createElement('div'); el.className = 'q'; el.innerHTML = `<div class="stars">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</div><p class="quote">${r.text}</p><small class="muted">— ${r.client}</small>`; reviewsEl.appendChild(el); });
+  </script>
+</body>
+</html>
