@@ -10,9 +10,11 @@
   <meta property="og:image" content="assets/og.png" />
 
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    :root{--bg:#0c0f14;--panel:#11161e;--ink:#dbe2f2;--muted:#9aa8c7;--accent:#00e5a8;--accent-2:#6aa7ff;--warning:#ffd166;--red:#ff6b6b;}
-    *{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;line-height:1.6}
+    :root{--bg:#0c0f14; --panel:#11161e; --ink:#dbe2f2; --muted:#9aa8c7; --accent:#00e5a8; --accent-2:#6aa7ff; --warning:#ffd166; --red:#ff6b6b;}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace; line-height:1.6}
     a{color:var(--accent);text-decoration:none} a:hover{opacity:.9}
     .container{max-width:1100px;margin:0 auto;padding:32px 20px}
     .terminal{border:1px solid #1b2230;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,.03), transparent),var(--panel);box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.02);overflow:hidden}
@@ -20,49 +22,84 @@
     .dots{display:flex;gap:8px;margin-right:8px}.dot{width:10px;height:10px;border-radius:50%}.dot.red{background:#ff5f56}.dot.yellow{background:#ffbd2e}.dot.green{background:#27c93f}
     .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;padding:24px}
     .hero h1{font-size:28px;line-height:1.25;margin:0 0 8px}
-    .muted{color:var(--muted)} .kpis{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px}
+    .muted{color:var(--muted)}
+    .kpis{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px}
     .chip{border:1px dashed #2a3447;padding:8px 10px;border-radius:8px;color:var(--muted);font-size:12px}
 
     .counters{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
     .counter{min-width:150px;border:1px solid #2a3447;border-radius:10px;padding:10px 12px;background:#0e1522}
-    .counter .num{font-weight:800;font-size:20px} .counter small{color:var(--muted)}
+    .counter .num{font-weight:800;font-size:20px}
+    .counter small{color:var(--muted)}
+
     .avatar{width:100%;border-radius:12px;border:1px solid #1b2230;background:#0b1018;object-fit:cover}
 
-    section{margin-top:38px} .sec-title{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--accent);letter-spacing:.02em;margin:0 0 14px}
-    .sec-title .hash{color:var(--accent-2)} .card{border:1px solid #1b2230;border-radius:12px;background:var(--panel);padding:18px}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px} .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    section{margin-top:38px}
+    .sec-title{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--accent);letter-spacing:.02em;margin:0 0 14px}
+    .sec-title .hash{color:var(--accent-2)}
+    .card{border:1px solid #1b2230;border-radius:12px;background:var(--panel);padding:18px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid #2a3447;color:var(--ink)}
-    .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px} .stack .s{font-size:12px;padding:4px 8px;border-radius:6px;background:#0e1522;border:1px solid #2a3447;color:var(--muted)}
+    .badge.good{border-style:solid;background:#0e1522}
+    .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .stack .s{font-size:12px;padding:4px 8px;border-radius:6px;background:#0e1522;border:1px solid #2a3447;color:var(--muted)}
 
+    /* Leadership tiles */
+    .leadership-grid{display:grid;grid-template-columns:1fr;gap:16px}
+    .leadership-tile{display:grid;grid-template-columns:80px 1fr;gap:14px;align-items:start;border:1px solid #1b2230;border-radius:12px;background:var(--panel);padding:14px}
+    .leader-logo{width:80px;height:80px;border-radius:10px;border:1px solid #1b2230;background:#0b1018;object-fit:cover}
+    .leader-content h3{margin:0 0 6px;font-size:16px}
+    .leader-content p{margin:0 0 8px}
+    .leader-content ul{margin:0 0 0 18px;padding:0}
+
+    /* Project */
     .project{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
-    .proj-title{margin:0 0 6px;font-size:18px} .proj-links{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 10px}
+    .proj-title{margin:0 0 6px;font-size:18px}
+    .proj-links{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 10px}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid #2a3447;border-radius:8px;color:var(--ink);font-size:13px;background:#0e1522}
-    .btn:hover{border-color:#39507a} .btn svg{width:16px;height:16px}
+    .btn:hover{border-color:#39507a}
+    .btn svg{width:16px;height:16px}
     .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
     .thumbs img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:10px;border:1px solid #1b2230;cursor:pointer;transition:transform .15s}
     .thumbs img:hover{transform:scale(1.02)}
 
+    /* Lightbox */
     .lightbox{position:fixed;inset:0;background:rgba(3,8,16,.9);display:none;align-items:center;justify-content:center;z-index:99}
-    .lightbox.open{display:flex} .lightbox-inner{max-width:1000px;width:94%;position:relative}
+    .lightbox.open{display:flex}
+    .lightbox-inner{max-width:1000px;width:94%;position:relative}
     .lightbox img{width:100%;height:auto;border-radius:12px;border:1px solid #2a3447;background:#0b1018}
     .nav{position:absolute;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid #2a3447;border-radius:8px;background:#0e1522;cursor:pointer}
-    .nav:hover{border-color:#39507a} .nav.prev{left:-54px}.nav.next{right:-54px}
+    .nav:hover{border-color:#39507a}
+    .nav.prev{left:-54px}.nav.next{right:-54px}
     .close{position:absolute;top:-52px;right:0;display:flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid #2a3447;border-radius:8px;background:#0e1522;cursor:pointer}
 
-    .testi{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .quote{border-left:3px solid var(--accent);padding-left:12px}
-    .stars{color:#ffd166;letter-spacing:2px}
-    .scroller{display:flex;gap:12px;overflow:auto;padding-bottom:6px}
-    .scroller .q{min-width:320px;border:1px solid #2a3447;border-radius:10px;padding:12px;background:#0e1522}
+    /* Consulting layout */
+    .consult-banner{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+    .top-rated-plus{background:#ffd166;color:#111;font-weight:800;padding:6px 12px;border-radius:8px;border:1px solid #2a3447}
+    .consult-wrap{display:grid;grid-template-columns:340px 1fr;gap:18px}
+    .reviews{display:flex;flex-direction:column;gap:12px}
+    .review{border:1px solid #2a3447;border-radius:10px;padding:14px;background:#0e1522}
+    .review .stars{color:#ffd166;letter-spacing:2px;margin-bottom:6px}
 
-    .reveal{opacity:0;transform:translateY(10px);transition:all .5s ease} .reveal.in{opacity:1;transform:none}
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(10px);transition:all .5s ease}
+    .reveal.in{opacity:1;transform:none}
 
+    /* Responsive */
     @media (max-width: 900px){
-      .hero{grid-template-columns:1fr;gap:18px} .project{grid-template-columns:1fr;gap:14px}
-      .grid{grid-template-columns:1fr} .grid-3{grid-template-columns:1fr 1fr}
-      .testi{grid-template-columns:1fr} .nav.prev{left:0}.nav.next{right:0}
+      .hero{grid-template-columns:1fr;gap:18px}
+      .project{grid-template-columns:1fr;gap:14px}
+      .grid{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr 1fr}
+      .consult-wrap{grid-template-columns:1fr}
+      .nav.prev{left:0}.nav.next{right:0}
     }
-    @media (max-width: 560px){ .grid-3{grid-template-columns:1fr} .kpis{gap:10px} }
+    @media (max-width: 560px){
+      .grid-3{grid-template-columns:1fr}
+      .kpis{gap:10px}
+      .leadership-tile{grid-template-columns:60px 1fr}
+      .leader-logo{width:60px;height:60px}
+    }
   </style>
 </head>
 <body>
@@ -73,34 +110,35 @@
         ~/portfolio — bash — <span class="muted">git:(main) ✦</span>
       </div>
 
+      <!-- HERO -->
       <div class="hero">
         <div class="reveal in">
           <h1>$ whoami<br/>Ahmad Azam — Tech Lead & Senior iOS Engineer</h1>
           <p class="muted">I build high-impact, scalable digital products (iOS, Fintech, AI). Leadership across strategy, architecture, and delivery.</p>
-          <div class="kpis"><span class="chip">⌁ iOS (Swift/SwiftUI)</span><span class="chip">⌁ Fintech • AI • CI/CD</span><span class="chip">⌁ Open Source: NetUtils</span></div>
+
+          <div class="kpis">
+            <span class="chip">⌁ iOS (Swift/SwiftUI)</span>
+            <span class="chip">⌁ Fintech • AI • CI/CD</span>
+            <span class="chip">⌁ Open Source: NetUtils</span>
+          </div>
+
           <div class="counters">
             <div class="counter"><div class="num" data-count="40" data-suffix="+">0</div><small>Apps Shipped</small></div>
             <div class="counter"><div class="num" data-count="6" data-suffix="+">0</div><small>Years Experience</small></div>
             <div class="counter"><div class="num" data-count="1000000" data-format="compact">0</div><small>Users Impacted</small></div>
           </div>
+
           <div class="stack" style="margin-top:14px">
             <span class="s">Swift</span><span class="s">SwiftUI</span><span class="s">UIKit</span><span class="s">Combine</span><span class="s">CoreData</span>
             <span class="s">Python</span><span class="s">Java • Spring Boot</span><span class="s">Firebase</span><span class="s">AWS</span><span class="s">Appium/Selenium</span>
           </div>
         </div>
-        <div class="reveal"><img class="avatar" src="assets/avatar.jpg" alt="Ahmad Azam — Professional Photo" /></div>
+        <div class="reveal">
+          <img class="avatar" src="assets/avatar.jpg" alt="Ahmad Azam — Professional Photo" />
+        </div>
       </div>
 
-      <section id="leadership" class="reveal">
-        <h2 class="sec-title"><span class="hash">#</span> leadership & strategy</h2>
-        <div class="card">
-          <p><span class="badge">Lead · iOS & Automation</span></p>
-          <p>Founded a cross-platform mobile automation framework from scratch, established CI/CD, code quality gates, and modern patterns (MVVM, composition, flow coordinators, prudent singleton use). Mentored engineers and partnered with product, security, and backend to ship reliably.</p>
-          <p>Fintech: led secure, compliance-aligned modules (onboarding, KYC, payments, account services) serving large cardholder bases.</p>
-          <div class="stack"><span class="s">CI/CD</span><span class="s">Architecture</span><span class="s">Code Review</span><span class="s">Security</span><span class="s">App Store Ops</span><span class="s">Mentorship</span></div>
-        </div>
-      </section>
-
+      <!-- ABOUT (above leadership) -->
       <section id="about" class="reveal">
         <h2 class="sec-title"><span class="hash">#</span> about</h2>
         <div class="grid">
@@ -109,13 +147,63 @@
             <p class="muted">Awards: Vice Chancellor Honour (2017, 2019), Outstanding Performance (i2c, 2021-22).</p>
           </div>
           <div class="card">
-            <p><strong>Currently:</strong> Sr. iOS Developer & Team Lead (HellaTek).</p>
-            <p><strong>Previously:</strong> Sr. iOS Developer & Mobile Automation Lead (i2c inc.). Backend (SSI): Spring Boot, Python, AWS, ETL.</p>
+            <p><strong>Currently:</strong> Lead Software Engineer (Vora IQ).</p>
+            <p><strong>Previously:</strong> Senior iOS Developer & Mobile Automation Lead (i2c inc.). Backend (SSI): Spring Boot, Python, AWS, ETL.</p>
             <div class="stack"><span class="s">Swift/SwiftUI</span><span class="s">UIKit</span><span class="s">CoreML/LLM APIs</span><span class="s">REST</span><span class="s">Firebase</span><span class="s">AWS</span></div>
           </div>
         </div>
       </section>
 
+      <!-- LEADERSHIP & EXPERIENCE -->
+      <section id="leadership" class="reveal">
+        <h2 class="sec-title"><span class="hash">#</span> leadership & experience</h2>
+
+        <div class="leadership-grid">
+          <div class="leadership-tile">
+            <img src="assets/vora-iq/logo.jpg" alt="Vora IQ Logo" class="leader-logo" />
+            <div class="leader-content">
+              <h3>Lead Software Engineer — Vora IQ</h3>
+              <p><em>Oct 2024 – Present · United States</em></p>
+              <ul>
+                <li><strong>Founding AI Engineer</strong>: Built AI-powered platforms to evaluate startup ideas, score viability, generate roadmaps, assign AI teammates, and deliver weekly insights.</li>
+                <li><strong>Product Engineering & Architecture</strong>: Led scalable, modular architectures for evaluation engines, scoring models, roadmap generation, and AI coordination.</li>
+                <li><strong>App Development</strong>: Native iOS app with Swift, SwiftUI, Combine, modular MVVM (@StateObject / @EnvironmentObject).</li>
+                <li><strong>AI & Integrations</strong>: LLMs (OpenAI), Langbase, and custom scoring algorithms for actionable insights.</li>
+                <li><strong>Team & Product Leadership</strong>: Shaped product vision, mentored developers, and contributed to go-to-market.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="leadership-tile">
+            <img src="assets/i2c/logo.jpg" alt="i2c inc. Logo" class="leader-logo" />
+            <div class="leader-content">
+              <h3>Senior iOS Developer & Mobile Automation Lead — i2c inc.</h3>
+              <p><em>Sep 2020 – Aug 2024 · Pakistan</em></p>
+              <ul>
+                <li>Founded a cross-platform mobile automation framework from scratch and rolled it out with CI/CD and quality gates.</li>
+                <li>Led modules for fintech apps (onboarding, KYC, payments, account services) used by large cardholder bases.</li>
+                <li>Resolved 150+ high-priority issues; research & adoption of SwiftUI alongside UIKit for hybrid apps.</li>
+                <li>Mentored engineers, defined architecture, and partnered with security, backend, and product teams.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="leadership-tile">
+            <img src="assets/ssi/logo.jpg" alt="SSI Logo" class="leader-logo" />
+            <div class="leader-content">
+              <h3>Backend Developer — SSI</h3>
+              <p><em>May 2020 – Aug 2020</em></p>
+              <ul>
+                <li>Coordinated with <strong>2 pods</strong> and developed REST APIs in <strong>microservices</strong> using Spring Boot and Python.</li>
+                <li>Built on AWS: <strong>Lambda</strong>, <strong>Step Functions</strong>, <strong>EC2</strong>, and <strong>NoSQL</strong> data stores for scalable pipelines.</li>
+                <li>Developed a <strong>web scraper</strong> (Python, Selenium) to fetch Amazon Seller records for campaign ETL.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
       <section id="projects" class="reveal">
         <h2 class="sec-title"><span class="hash">#</span> featured projects</h2>
 
@@ -154,7 +242,7 @@
             <div class="proj-links"><a class="btn" href="https://www.flywheeldigital.com/" target="_blank" rel="noopener">Website ↗</a></div>
             <div class="stack"><span class="s">APIs</span><span class="s">Reliability</span><span class="s">Perf</span></div>
           </div>
-          <div><div class="thumbs"><img src="assets/flywheel/1.jpg" alt="Flywheel 1" data-idx="0"><img src="assets/flywheel/2.jpg" alt="Flywheel 2" data-idx="1"><img src="assets/flywheel/3.jpg" alt="Flywheel 3" data-idx="2"></div></div>
+          <div><div class="thumbs"><img src="assets/flywheel/1.jpg" alt="Flywheel 1" data-idx="0"><img src="assets/flywheel/2.jpg" alt="Flywheel 2" data-idx="1">></div></div>
         </div>
 
         <div class="card project" data-gallery="netutils">
@@ -201,23 +289,22 @@
         </div>
       </section>
 
+      <!-- UPWORK CONSULTING + REVIEWS -->
       <section id="consulting" class="reveal">
         <h2 class="sec-title"><span class="hash">#</span> consulting on upwork</h2>
-        <div class="testi">
+        <div class="consult-banner"><span class="top-rated-plus">Top Rated Plus ⭐</span><span class="muted">Trusted by global clients for iOS delivery & architecture</span></div>
+        <div class="consult-wrap">
           <div class="card">
             <p><strong>Consultancy & Development</strong></p>
-            <p>Provide end-to-end iOS consulting, architecture reviews, performance tuning, and feature development for global clients via Upwork.</p>
+            <p>Provide end-to-end iOS consulting, architecture reviews, performance tuning, and feature development for global clients on Upwork.</p>
             <p class="muted">Profile: <a href="https://www.upwork.com/freelancers/ahmadazam950?p=1455225905912270848" target="_blank" rel="noopener">Upwork/ahmadazam950 ↗</a></p>
             <div class="stack"><span class="s">Swift/SwiftUI</span><span class="s">Refactoring</span><span class="s">Architecture</span><span class="s">Code Reviews</span><span class="s">App Store</span></div>
           </div>
-          <div class="card">
-            <p><strong>Client Reviews</strong></p>
-            <div class="scroller" id="reviews"></div>
-            <small class="muted">Selected comments from recent engagements. (Paste exact quotes in the JSON below.)</small>
-          </div>
+          <div class="reviews" id="reviews"></div>
         </div>
       </section>
 
+      <!-- AWARDS -->
       <section id="awards" class="reveal">
         <h2 class="sec-title"><span class="hash">#</span> awards & recognition</h2>
         <div class="grid">
@@ -226,6 +313,7 @@
         </div>
       </section>
 
+      <!-- CONTACT -->
       <section id="contact" class="reveal" style="margin-bottom:22px">
         <h2 class="sec-title"><span class="hash">#</span> contact</h2>
         <div class="card"><p>Email: <a href="mailto:ahmadazam950@gmail.com">ahmadazam950@gmail.com</a></p><p>LinkedIn: <a href="https://www.linkedin.com/in/ahmad-azam/" target="_blank" rel="noopener">linkedin.com/in/ahmad-azam</a> — GitHub: <a href="https://github.com/AhmadAzam" target="_blank" rel="noopener">github.com/AhmadAzam</a></p></div>
@@ -234,18 +322,13 @@
   </div>
 
   <script>
+    // Reveal on scroll
     const observer = new IntersectionObserver((entries)=>{entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); observer.unobserve(e.target);} });},{threshold:.12}); document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-    const galleries = {
-      "direct-express": ["assets/direct-express/1.jpg","assets/direct-express/2.jpg","assets/direct-express/3.jpg"],
-      "cbtc": ["assets/cbtc/1.jpg","assets/cbtc/2.jpg","assets/cbtc/3.jpg"],
-      "flywheel": ["assets/flywheel/1.jpg","assets/flywheel/2.jpg","assets/flywheel/3.jpg"],
-      "netutils": ["assets/netutils/1.jpg","assets/netutils/2.jpg","assets/netutils/3.jpg"],
-      "smartai": ["assets/smart-ai/1.jpg","assets/smart-ai/2.jpg","assets/smart-ai/3.jpg"],
-      "acft": ["assets/acft/1.jpg","assets/acft/2.jpg","assets/acft/3.jpg"],
-      "magicneedle": ["assets/magic-needle/1.jpg","assets/magic-needle/2.jpg","assets/magic-needle/3.jpg"]
-    };
+    // Galleries
+    const galleries = {"direct-express":["assets/direct-express/1.jpg","assets/direct-express/2.jpg","assets/direct-express/3.jpg"],"cbtc":["assets/cbtc/1.jpg","assets/cbtc/2.jpg","assets/cbtc/3.jpg"],"flywheel":["assets/flywheel/1.jpg","assets/flywheel/2.jpg"],"netutils":["assets/netutils/1.jpg","assets/netutils/2.jpg","assets/netutils/3.jpg"],"smartai":["assets/smart-ai/1.jpg","assets/smart-ai/2.jpg","assets/smart-ai/3.jpg"],"acft":["assets/acft/1.jpg","assets/acft/2.jpg","assets/acft/3.jpg"],"magicneedle":["assets/magic-needle/1.jpg","assets/magic-needle/2.jpg","assets/magic-needle/3.jpg"]};
 
+    // Lightbox
     const lb = document.createElement('div'); lb.className = 'lightbox'; lb.innerHTML = `<div class="lightbox-inner"><button class="close" aria-label="Close">✕</button><button class="nav prev" aria-label="Previous">◀</button><img alt=""><button class="nav next" aria-label="Next">▶</button></div>`; document.body.appendChild(lb);
     let currentKey=null, currentIdx=0; const imgEl = lb.querySelector('img');
     const show = (key, idx)=>{ const list = galleries[key]; if(!list) return; currentKey = key; currentIdx = (idx+list.length)%list.length; imgEl.src = list[currentIdx]; lb.classList.add('open'); };
@@ -257,23 +340,19 @@
     lb.querySelector('.nav.next').addEventListener('click', ()=> show(currentKey, currentIdx+1));
     document.addEventListener('keydown', (e)=>{ if(!lb.classList.contains('open')) return; if(e.key==='Escape') hide(); if(e.key==='ArrowLeft') show(currentKey, currentIdx-1); if(e.key==='ArrowRight') show(currentKey, currentIdx+1); });
 
-    // Animated counters
+    // Counters
     const counters = document.querySelectorAll('.num'); const fmtCompact = Intl.NumberFormat('en', {notation:'compact'});
-    const animateCounter = (el)=>{ const target = parseInt(el.dataset.count||'0',10); const suffix = el.dataset.suffix||''; const compact = el.dataset.format==='compact';
-      let cur = 0; const steps = 40; const inc = Math.max(1, Math.round(target/steps));
-      const tick = ()=> { cur = Math.min(target, cur + inc); el.textContent = (compact? fmtCompact.format(cur) : cur) + (cur===target ? suffix : ''); if(cur < target) requestAnimationFrame(tick); };
-      tick();
-    };
+    const animateCounter = (el)=>{ const target = parseInt(el.dataset.count||'0',10); const suffix = el.dataset.suffix||''; const compact = el.dataset.format==='compact'; let cur = 0; const steps = 40; const inc = Math.max(1, Math.round(target/steps)); const tick = ()=> { cur = Math.min(target, cur + inc); el.textContent = (compact? fmtCompact.format(cur) : cur) + (cur===target ? suffix : ''); if(cur < target) requestAnimationFrame(tick); }; tick(); };
     counters.forEach(animateCounter);
 
-    // Upwork reviews placeholder (replace with your real quotes)
+    // Reviews (replace with your real quotes)
     const upworkReviews = [
-      { stars:5, text:"Paste a client quote here about speed, communication, or code quality.", client:"Client, Upwork" },
-      { stars:5, text:"Paste another short testimonial here (architecture, SwiftUI expertise, delivery on time).", client:"Client, Upwork" },
-      { stars:4, text:"Optional third review. Keep it 15–25 words for scannability.", client:"Client, Upwork" }
+      {stars:5, text:"We now have a long history of working with Ahmad and can highly recommend him!For us, he expertly handles iOS (Swift) and Python programming, as well as database management. He continues to have excellent communication and deliver on schedule.", client:"Swedish Client, Upwork"},
+      {stars:5, text:"High quality work that never disappoints. Can solve any problem. Great iOS developer and can code in multiple languages.", client:"USA Client, Upwork"},
+      {stars:5, text:"Excellent developer. Quick turn around, easy to work with and high quality code. I highly recommend him!", client:"USA Client, Upwork"}
     ];
     const reviewsEl = document.getElementById('reviews');
-    upworkReviews.forEach(r=>{ const el = document.createElement('div'); el.className = 'q'; el.innerHTML = `<div class="stars">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</div><p class="quote">${r.text}</p><small class="muted">— ${r.client}</small>`; reviewsEl.appendChild(el); });
+    upworkReviews.forEach(r=>{ const el = document.createElement('div'); el.className = 'review'; el.innerHTML = `<div class="stars">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</div><p>${r.text}</p><small class="muted">— ${r.client}</small>`; reviewsEl.appendChild(el); });
   </script>
 </body>
 </html>
