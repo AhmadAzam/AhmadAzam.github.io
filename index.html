@@ -4,50 +4,63 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Ahmad Azam — Tech Lead & Senior iOS Engineer</title>
-  <meta name="description" content="Senior Software Engineer & Tech Lead — 40+ apps built. Fintech, AI, iOS (Swift/SwiftUI), Product & Team Leadership." />
+  <meta name="description" content="Ahmad Azam, Lead Software Engineer and Senior iOS Engineer specializing in Swift, SwiftUI, UIKit, fintech, AI products, CI/CD, mobile automation, and team leadership." />
   <meta property="og:title" content="Ahmad Azam — Tech Lead & Senior iOS Engineer" />
-  <meta property="og:description" content="6+ years, 40+ apps. iOS • Fintech • AI." />
+  <meta property="og:description" content="6+ years, 40+ apps. iOS, Swift, SwiftUI, fintech, AI, CI/CD, and engineering leadership." />
   <meta property="og:image" content="assets/og.png" />
 
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-
   <style>
-    :root{--bg:#0c0f14; --panel:#11161e; --ink:#dbe2f2; --muted:#9aa8c7; --accent:#00e5a8; --accent-2:#6aa7ff; --warning:#ffd166; --red:#ff6b6b;}
+    :root{--bg:#0b1118; --panel:#101820; --panel-2:#0f1722; --ink:#edf4ff; --muted:#a8b5c8; --soft:#d8e0ea; --accent:#2dd4bf; --accent-2:#8ab4ff; --line:#223044; --gold:#f4c95d;}
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace; line-height:1.6}
-    a{color:var(--accent);text-decoration:none} a:hover{opacity:.9}
-    .container{max-width:1100px;margin:0 auto;padding:32px 20px}
-    .terminal{border:1px solid #1b2230;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,.03), transparent),var(--panel);box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.02);overflow:hidden}
-    .term-title{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid #1b2230;background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.1));font-size:12px;color:var(--muted)}
+    html{scroll-behavior:smooth}
+    html,body{margin:0;padding:0;background:radial-gradient(circle at 15% 0%, rgba(45,212,191,.12), transparent 34%), var(--bg);color:var(--ink);font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.6}
+    body{font-size:16px}
+    a{color:var(--accent);text-decoration:none} a:hover{color:#78f4df}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px}
+    .container{max-width:1120px;margin:0 auto;padding:28px 20px}
+    .terminal{border:1px solid var(--line);border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,.035), transparent 260px),var(--panel);box-shadow:0 18px 60px rgba(0,0,0,.34);overflow:hidden}
+    .term-title{display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line);background:rgba(7,12,18,.72);font-size:13px;color:var(--muted)}
     .dots{display:flex;gap:8px;margin-right:8px}.dot{width:10px;height:10px;border-radius:50%}.dot.red{background:#ff5f56}.dot.yellow{background:#ffbd2e}.dot.green{background:#27c93f}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;padding:24px}
-    .hero h1{font-size:28px;line-height:1.25;margin:0 0 8px}
+    .brand{font-weight:800;color:var(--soft)}
+    .top-nav{display:flex;flex-wrap:wrap;gap:10px;margin-left:auto}
+    .top-nav a{color:var(--muted);font-size:13px}
+    .top-nav a:hover{color:var(--ink)}
+    .hero{display:grid;grid-template-columns:minmax(0,1.26fr) minmax(280px,.74fr);gap:28px;padding:30px}
+    .eyebrow{margin:0 0 8px;color:var(--accent);font-weight:800;text-transform:uppercase;font-size:12px;letter-spacing:.08em}
+    .hero h1{font-size:clamp(34px,5vw,58px);line-height:1.05;margin:0 0 14px;letter-spacing:0}
+    .hero p{max-width:720px}
     .muted{color:var(--muted)}
-    .kpis{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px}
-    .chip{border:1px dashed #2a3447;padding:8px 10px;border-radius:8px;color:var(--muted);font-size:12px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .kpis{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .chip{border:1px solid rgba(138,180,255,.28);padding:8px 10px;border-radius:8px;color:var(--soft);font-size:13px;background:rgba(138,180,255,.07)}
 
     .counters{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
-    .counter{min-width:150px;border:1px solid #2a3447;border-radius:10px;padding:10px 12px;background:#0e1522}
-    .counter .num{font-weight:800;font-size:20px}
+    .counter{min-width:150px;border:1px solid var(--line);border-radius:8px;padding:12px 14px;background:var(--panel-2)}
+    .counter .num{font-weight:800;font-size:24px;color:var(--ink)}
     .counter small{color:var(--muted)}
 
-    .avatar{width:100%;border-radius:12px;border:1px solid #1b2230;background:#0b1018;object-fit:cover}
+    .avatar-wrap{align-self:start;border:1px solid var(--line);border-radius:8px;background:#0b1018;padding:10px}
+    .avatar{width:100%;border-radius:6px;object-fit:cover;display:block}
+    .contact-strip{display:grid;gap:8px;margin-top:12px;color:var(--muted);font-size:14px}
 
-    section{margin-top:38px;padding:0px 16px;}
-    .sec-title{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--accent);letter-spacing:.02em;margin:0 0 14px}
+    section{margin-top:34px;padding:0 24px;}
+    .sec-title{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--accent);letter-spacing:0;margin:0 0 14px}
     .sec-title .hash{color:var(--accent-2)}
-    .card{border:1px solid #1b2230;border-radius:12px;background:var(--panel);padding:18px}
+    .card{border:1px solid var(--line);border-radius:8px;background:rgba(15,23,34,.9);padding:18px}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid #2a3447;color:var(--ink)}
-    .badge.good{border-style:solid;background:#0e1522}
+    .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--ink)}
+    .badge.good{border-style:solid;background:var(--panel-2)}
     .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-    .stack .s{font-size:12px;padding:4px 8px;border-radius:6px;background:#0e1522;border:1px solid #2a3447;color:var(--muted)}
+    .stack .s{font-size:12px;padding:5px 8px;border-radius:6px;background:var(--panel-2);border:1px solid var(--line);color:var(--soft)}
+    .resume-list{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+    .resume-list li{padding-left:18px;position:relative;color:var(--soft)}
+    .resume-list li::before{content:"";position:absolute;left:0;top:.7em;width:7px;height:7px;border-radius:50%;background:var(--accent)}
 
     /* Leadership tiles */
     .leadership-grid{display:grid;grid-template-columns:1fr;gap:16px}
-    .leadership-tile{display:grid;grid-template-columns:80px 1fr;gap:14px;align-items:start;border:1px solid #1b2230;border-radius:12px;background:var(--panel);padding:14px}
-    .leader-logo{width:80px;height:80px;border-radius:10px;border:1px solid #1b2230;background:#0b1018;object-fit:contain;padding:6px}
+    .leadership-tile{display:grid;grid-template-columns:80px 1fr;gap:14px;align-items:start;border:1px solid var(--line);border-radius:8px;background:rgba(15,23,34,.9);padding:16px}
+    .leader-logo{width:80px;height:80px;border-radius:8px;border:1px solid var(--line);background:#0b1018;object-fit:contain;padding:6px}
     .leader-content h3{margin:0 0 6px;font-size:16px}
     .leader-content p{margin:0 0 8px}
     .leader-content ul{margin:0 0 0 18px;padding:0}
@@ -56,11 +69,12 @@
     .project{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
     .proj-title{margin:0 0 6px;font-size:18px}
     .proj-links{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 10px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid #2a3447;border-radius:8px;color:var(--ink);font-size:13px;background:#0e1522}
-    .btn:hover{border-color:#39507a}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;color:var(--ink);font-size:13px;background:var(--panel-2);font-weight:700}
+    .btn.primary{background:var(--accent);color:#071018;border-color:var(--accent)}
+    .btn:hover{border-color:var(--accent-2)}
     .btn svg{width:16px;height:16px}
     .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-    .thumbs img{width:100%;height:200px;object-fit:contain;background:#0b1018;border-radius:12px;border:1px solid #1b2230;padding:6px;cursor:pointer;transition:transform .15s}
+    .thumbs img{width:100%;height:200px;object-fit:contain;background:#0b1018;border-radius:8px;border:1px solid var(--line);padding:6px;cursor:pointer;transition:transform .15s,border-color .15s}
     .thumbs img:hover{transform:scale(1.02)}
 
     /* Lightbox */
@@ -75,22 +89,22 @@
   height:auto;
   object-fit:contain;
   object-position:center center;
-  border-radius:12px;
-  border:1px solid #2a3447;
+  border-radius:8px;
+  border:1px solid var(--line);
   background:#0b1018;
 }
-    .nav{position:absolute;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid #2a3447;border-radius:8px;background:#0e1522;cursor:pointer}
-    .nav:hover{border-color:#39507a}
+    .nav{position:absolute;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--line);border-radius:8px;background:var(--panel-2);cursor:pointer;color:var(--ink)}
+    .nav:hover{border-color:var(--accent-2)}
     .nav.prev{left:-54px}.nav.next{right:-54px}
-    .close{position:absolute;top:-52px;right:0;display:flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid #2a3447;border-radius:8px;background:#0e1522;cursor:pointer}
+    .close{position:absolute;top:-52px;right:0;display:flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--line);border-radius:8px;background:var(--panel-2);cursor:pointer;color:var(--ink)}
 
     /* Consulting layout */
     .consult-banner{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-    .top-rated-plus{background:#ffd166;color:#111;font-weight:800;padding:6px 12px;border-radius:8px;border:1px solid #2a3447}
+    .top-rated-plus{background:var(--gold);color:#111;font-weight:800;padding:6px 12px;border-radius:8px;border:1px solid var(--line)}
     .consult-wrap{display:grid;grid-template-columns:340px 1fr;gap:18px}
     .reviews{display:flex;flex-direction:column;gap:12px}
-    .review{border:1px solid #2a3447;border-radius:10px;padding:14px;background:#0e1522}
-    .review .stars{color:#ffd166;letter-spacing:2px;margin-bottom:6px}
+    .review{border:1px solid var(--line);border-radius:8px;padding:14px;background:var(--panel-2)}
+    .review .stars{color:var(--gold);letter-spacing:2px;margin-bottom:6px}
 
     /* Reveal */
     .reveal{opacity:0;transform:translateY(10px);transition:all .5s ease}
@@ -104,17 +118,16 @@
       .grid-3{grid-template-columns:1fr 1fr}
       .consult-wrap{grid-template-columns:1fr}
       .nav.prev{left:0}.nav.next{right:0}
+      .top-nav{width:100%;margin-left:0}
     }
     @media (max-width: 560px){
+      .container{padding:12px}
+      .hero,section{padding-left:16px;padding-right:16px}
       .grid-3{grid-template-columns:1fr}
       .kpis{gap:10px}
       .leadership-tile{grid-template-columns:60px 1fr}
       .leader-logo{width:60px;height:60px}
       .thumbs img{height:260px}
-    }
-      .kpis{gap:10px}
-      .leadership-tile{grid-template-columns:60px 1fr}
-      .leader-logo{width:60px;height:60px}
     }
   </style>
 </head>
@@ -123,36 +136,54 @@
     <div class="terminal">
       <div class="term-title">
         <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
-        ~/portfolio — bash — <span class="muted">git:(main) ✦</span>
+        <span class="brand">Ahmad Azam — portfolio</span>
+        <nav class="top-nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#leadership">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
 
       <!-- HERO -->
       <div class="hero">
         <div class="reveal in">
-          <h1>$ whoami<br/>Ahmad Azam — Tech Lead & Senior iOS Engineer</h1>
-          <p class="muted">I build high-impact, scalable digital products (iOS, Fintech, Health, AI). Leadership across strategy, architecture, and delivery.</p>
+          <p class="eyebrow">Lead Software Engineer | Senior iOS Engineer</p>
+          <h1>Ahmad Azam</h1>
+          <p class="muted">Senior mobile and AI product engineer with 6+ years of experience shipping secure fintech, health, productivity, and automation products. I lead architecture, delivery, mentoring, CI/CD, and hands-on iOS development with Swift, SwiftUI, UIKit, Combine, and backend integrations.</p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="mailto:ahmadazam950@gmail.com">Contact Me</a>
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn" href="https://www.linkedin.com/in/ahmad-azam/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
 
           <div class="kpis">
-            <span class="chip">⌁ iOS (Swift/SwiftUI)</span>
-            <span class="chip">⌁ Fintech • AI • CI/CD</span>
-            <span class="chip">⌁ Open Source: NetUtils</span>
+            <span class="chip">iOS: Swift, SwiftUI, UIKit</span>
+            <span class="chip">Fintech, AI, SaaS, Automation</span>
+            <span class="chip">Architecture, CI/CD, Mentorship</span>
           </div>
 
           <div class="counters">
-            <div class="counter"><div class="num" data-count="40" data-suffix="+">0</div><small>Apps Shipped</small></div>
-            <div class="counter"><div class="num" data-count="6" data-suffix="+">0</div><small>Years Experience</small></div>
-            <div class="counter"><div class="num" data-count="3000000" data-format="compact">0</div><small>Users Impacted</small></div>
+            <div class="counter"><div class="num" data-count="40" data-suffix="+">40+</div><small>Apps Shipped</small></div>
+            <div class="counter"><div class="num" data-count="6" data-suffix="+">6+</div><small>Years Experience</small></div>
+            <div class="counter"><div class="num" data-count="3000000" data-format="compact">3M</div><small>Users Impacted</small></div>
           </div>
 
           <div class="stack" style="margin-top:14px">
             <span class="s">Swift</span><span class="s">SwiftUI</span><span class="s">UIKit</span><span class="s">Combine</span><span class="s">CoreData</span>
-            <span class="s">Python</span><span class="s">Java • Spring Boot</span> <span class="s">AWS</span> <span class="s">Machine Learning</span> <span class="s">LLM</span> 
-            <span class="s">Firebase</span><span class="s">AWS</span><span class="s">Appium/Selenium</span> <span class="s">Git</span> <span class="s">FastLane</span> <span class="s">CI/CD</span>
+            <span class="s">Python</span><span class="s">Java / Spring Boot</span> <span class="s">AWS</span> <span class="s">Machine Learning</span> <span class="s">LLM</span> 
+            <span class="s">Firebase</span><span class="s">Appium / Selenium</span> <span class="s">Git</span> <span class="s">Fastlane</span> <span class="s">CI/CD</span>
             <span class="s">Databases</span>
           </div>
         </div>
-        <div class="reveal">
+        <div class="reveal avatar-wrap">
           <img class="avatar" src="assets/avatar.jpg" alt="Ahmad Azam — Professional Photo" />
+          <div class="contact-strip">
+            <span>Lahore, Pakistan | Open to remote roles</span>
+            <a href="mailto:ahmadazam950@gmail.com">ahmadazam950@gmail.com</a>
+            <a href="https://github.com/AhmadAzam" target="_blank" rel="noopener">github.com/AhmadAzam</a>
+          </div>
         </div>
       </div>
 
@@ -161,14 +192,18 @@
         <h2 class="sec-title"><span class="hash">#</span> about</h2>
         <div class="grid">
           <div class="card">
-            <p>Position holder in BS Software Engineering (Punjab University). Award-winning iOS engineer shipping products across fintech, health & fitness, and AI-powered tools. Open-source contributor.</p>
-            <p class="muted">Awards: Vice Chancellor Honour (2017, 2019), Outstanding Performance (i2c, 2021-22).</p>
+            <p><strong>Professional Summary</strong></p>
+            <ul class="resume-list">
+              <li>Lead Software Engineer with ownership across product strategy, mobile architecture, feature delivery, and engineering mentorship.</li>
+              <li>Senior iOS engineer experienced in Swift, SwiftUI, UIKit, Combine, CoreData, REST APIs, Firebase, App Store delivery, and performance tuning.</li>
+              <li>Built and maintained fintech, AI, health, productivity, and developer-tooling applications used by large customer bases.</li>
+            </ul>
           </div>
           <div class="card">
-            <p><strong>Currently:</strong> Lead Software Engineer (Vora IQ).</p>
-            <p><strong>Previously:</strong> Senior iOS Developer & Mobile Automation Lead (i2c inc.). FullStack Developer (SSI)</p>
+            <p><strong>Core Competencies</strong></p>
             <div class="stack"><span class="s">Swift/SwiftUI</span><span class="s">UIKit</span><span class="s">CoreML/LLM APIs</span><span class="s">REST</span><span class="s">Firebase</span><span class="s">AWS</span>
-            <span class="s">Java • Spring Boot</span> <span class="s">MongoDb</span> <span class="s">Microservices</span></div>
+            <span class="s">Java / Spring Boot</span> <span class="s">MongoDB</span> <span class="s">Microservices</span><span class="s">CI/CD</span><span class="s">Mobile Automation</span><span class="s">Agile Delivery</span></div>
+            <p class="muted">Awards: Vice Chancellor Honour (2017, 2019), Outstanding Performance Award at i2c (2021-22). BS Software Engineering position holder, Punjab University.</p>
           </div>
         </div>
       </section>
@@ -184,10 +219,10 @@
               <h3>Lead Software Engineer — Vora IQ</h3>
               <p><em>Oct 2024 – Present · United States</em></p>
               <ul>
-                <li><strong>Founding AI Engineer</strong>: Built AI-powered platforms to evaluate startup ideas, score viability, generate roadmaps, assign AI teammates, and deliver weekly insights.</li>
-                <li><strong>Product Engineering & Architecture</strong>: Led scalable, modular architectures for evaluation engines, scoring models, roadmap generation, and AI coordination.</li>
+                <li><strong>Founding AI Engineer</strong>: Built AI-powered SaaS platforms to evaluate startup ideas, score viability, generate roadmaps, assign AI teammates, and deliver weekly insights.</li>
+                <li><strong>Product Engineering & Architecture</strong>: Led scalable modular architectures for evaluation engines, scoring models, roadmap generation, and AI coordination.</li>
                 <li><strong>App Development</strong>: Native iOS app with Swift, SwiftUI, Combine, modular MVVM (@StateObject / @EnvironmentObject).</li>
-                <li><strong>AI & Integrations</strong>: LLMs (OpenAI), Langbase, and custom scoring algorithms for actionable insights.</li>
+                <li><strong>AI & Integrations</strong>: OpenAI LLMs, Langbase, and custom scoring algorithms for actionable product insights.</li>
                 <li><strong>Team & Product Leadership</strong>: Shaped product vision, mentored developers, and contributed to go-to-market.</li>
               </ul>
             </div>
@@ -200,8 +235,8 @@
               <p><em>Sep 2020 – Aug 2024 · Pakistan</em></p>
               <ul>
                 <li>Founded a cross-platform mobile automation framework from scratch and rolled it out with CI/CD and quality gates.</li>
-                <li>Led modules for fintech apps (onboarding, KYC, payments, account services) used by large cardholder bases.</li>
-                <li>Resolved 150+ high-priority issues; research & adoption of SwiftUI alongside UIKit for hybrid apps.</li>
+                <li>Led modules for fintech apps including onboarding, KYC, payments, card controls, account services, alerts, and secure authentication.</li>
+                <li>Resolved 150+ high-priority issues and adopted SwiftUI alongside UIKit for hybrid production apps.</li>
                 <li>Mentored engineers, defined architecture, and partnered with security, backend, and product teams.</li>
               </ul>
             </div>
@@ -214,8 +249,8 @@
               <p><em>May 2020 – Aug 2020</em></p>
               <ul>
                 <li>Coordinated with <strong>2 pods</strong> and developed REST APIs in <strong>microservices</strong> using Spring Boot and Python.</li>
-                <li>Built on AWS: <strong>Lambda</strong>, <strong>Step Functions</strong>, <strong>EC2</strong>, and <strong>NoSQL</strong> data stores for scalable pipelines.</li>
-                <li>Developed a <strong>web scraper</strong> (Python, Selenium) to fetch Amazon Seller records for campaign ETL.</li>
+                <li>Built AWS workflows with <strong>Lambda</strong>, <strong>Step Functions</strong>, <strong>EC2</strong>, and <strong>NoSQL</strong> data stores for scalable pipelines.</li>
+                <li>Developed a <strong>web scraper</strong> with Python and Selenium to fetch Amazon seller records for campaign ETL.</li>
               </ul>
             </div>
           </div>
@@ -229,9 +264,9 @@
         <div class="card project" data-gallery="direct-express">
           <div>
             <h3 class="proj-title">Direct Express — Fintech</h3>
-            <p class="muted">Lead iOS modules for a high-traffic, security-critical cardholder app: enrolment, account services, payments. Compliance-first, performance-driven.</p>
+            <p class="muted">Led iOS modules for a high-traffic, security-critical cardholder app covering enrollment, account services, statements, alerts, payments, and authentication. Compliance-first and performance-driven.</p>
             <div class="proj-links">
-              <a class="btn" href="https://apps.apple.com/us/app/direct-express/id1499348004" target="_blank" rel="noopener" aria-label="App Store">
+              <a class="btn" href="https://apps.apple.com/us/app/direct-express-mobile/id1583272575" target="_blank" rel="noopener" aria-label="Direct Express Mobile on the App Store">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 13.2c0-2.6 2.1-3.9 2.2-3.9-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.6 1.3 10.1.9 1.3 2 2.7 3.5 2.7 1.4 0 1.9-.9 3.5-.9 1.6 0 2 .9 3.4.9 1.4 0 2.3-1.3 3.2-2.6 1-1.5 1.4-3 1.4-3.1-.1 0-2.7-1-2.7-3.8zM15.1 4.6c.7-.9 1.2-2.1 1.1-3.3-1.1.1-2.4.8-3.1 1.7-.7.8-1.3 2.1-1.1 3.2 1.2.1 2.4-.7 3.1-1.6z"/></svg> App Store
               </a>
             </div>
@@ -242,10 +277,10 @@
 
         <div class="card project" data-gallery="cbtc">
           <div>
-            <h3 class="proj-title">CBTC Credit Card — Fintech</h3>
-            <p class="muted">Lead iOS development of key credit card features: onboarding, card controls, transaction views, and secure service flows.</p>
+            <h3 class="proj-title">Shore United Bank Credit Card (CBTC) — Fintech</h3>
+            <p class="muted">Led iOS development of key credit card features: onboarding, card controls, transaction views, secure service flows, and account management.</p>
             <div class="proj-links">
-              <a class="btn" href="https://apps.apple.com/us/app/cbtc-credit-card/id1561216110" target="_blank" rel="noopener">
+              <a class="btn" href="https://apps.apple.com/us/app/shore-united-bank-credit-card/id1561216110" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 13.2c0-2.6 2.1-3.9 2.2-3.9-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.6 1.3 10.1.9 1.3 2 2.7 3.5 2.7 1.4 0 1.9-.9 3.5-.9 1.6 0 2 .9 3.4.9 1.4 0 2.3-1.3 3.2-2.6 1-1.5 1.4-3 1.4-3.1-.1 0-2.7-1-2.7-3.8zM15.1 4.6c.7-.9 1.2-2.1 1.1-3.3-1.1.1-2.4.8-3.1 1.7-.7.8-1.3 2.1-1.1 3.2 1.2.1 2.4-.7 3.1-1.6z"/></svg> App Store
               </a>
             </div>
@@ -257,7 +292,7 @@
         <div class="card project" data-gallery="flywheel">
           <div>
             <h3 class="proj-title">Flywheel Digital — Platform Work</h3>
-            <p class="muted">Contributions to resilient integrations and performance-oriented platform pieces for a global digital commerce leader.</p>
+            <p class="muted">Contributed to resilient integrations and performance-oriented platform work for a global digital commerce leader.</p>
             <div class="proj-links"><a class="btn" href="https://www.flywheeldigital.com/" target="_blank" rel="noopener">Website ↗</a></div>
             <div class="stack"><span class="s">APIs</span><span class="s">Reliability</span><span class="s">Perf</span></div>
           </div>
@@ -267,7 +302,7 @@
         <div class="card project" data-gallery="netutils">
           <div>
             <h3 class="proj-title">NetUtils — Advanced Network Utilities</h3>
-            <p class="muted">Open-source iOS/macOS diagnostics. Contributed features and UX polish used by IT pros worldwide.</p>
+            <p class="muted">Open-source iOS and macOS diagnostics app for networking, DNS, WHOIS, ping, and source inspection. Contributed features and UX polish used by IT professionals.</p>
             <div class="proj-links">
               <a class="btn" href="https://apps.apple.com/us/app/netutils-network-utilities/id1434360325" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 13.2c0-2.6 2.1-3.9 2.2-3.9-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.6 1.3 10.1.9 1.3 2 2.7 3.5 2.7 1.4 0 1.9-.9 3.5-.9 1.6 0 2 .9 3.4.9 1.4 0 2.3-1.3 3.2-2.6 1-1.5 1.4-3 1.4-3.1-.1 0-2.7-1-2.7-3.8zM15.1 4.6c.7-.9 1.2-2.1 1.1-3.3-1.1.1-2.4.8-3.1 1.7-.7.8-1.3 2.1-1.1 3.2 1.2.1 2.4-.7 3.1-1.6z"/></svg> App Store</a>
               <a class="btn" href="https://github.com/twodayslate/NetUtils" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2 .37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.94-.01 2.21 0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg> GitHub</a>
@@ -280,7 +315,7 @@
         <div class="card project" data-gallery="smartai">
           <div>
             <h3 class="proj-title">Smart AI Actions — Productivity with LLMs</h3>
-            <p class="muted">AI-powered automation app built with SwiftUI & Combine. Natural-language actions for power users.</p>
+            <p class="muted">AI-powered automation app built with SwiftUI and Combine. Supports natural-language actions, prompt workflows, and LLM API integrations for power users.</p>
             <div class="proj-links"><a class="btn" href="https://apps.apple.com/us/app/smart-ai-actions/id1659310170" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 13.2c0-2.6 2.1-3.9 2.2-3.9-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.6 1.3 10.1.9 1.3 2 2.7 3.5 2.7 1.4 0 1.9-.9 3.5-.9 1.6 0 2 .9 3.4.9 1.4 0 2.3-1.3 3.2-2.6 1-1.5 1.4-3 1.4-3.1-.1 0-2.7-1-2.7-3.8zM15.1 4.6c.7-.9 1.2-2.1 1.1-3.3-1.1.1-2.4.8-3.1 1.7-.7.8-1.3 2.1-1.1 3.2 1.2.1 2.4-.7 3.1-1.6z"/></svg> App Store</a></div>
             <div class="stack"><span class="s">SwiftUI</span><span class="s">LLM APIs</span><span class="s">Combine</span></div>
           </div>
@@ -290,7 +325,7 @@
         <div class="card project" data-gallery="acft">
           <div>
             <h3 class="proj-title">ACFT Calculator & Resources</h3>
-            <p class="muted">Niche fitness utility for accurate ACFT scoring and guidance. Performance-tuned for instant results.</p>
+            <p class="muted">Fitness utility for ACFT scoring, reverse calculation, guidance, exports, and instant results across Apple platforms.</p>
             <div class="proj-links"><a class="btn" href="https://apps.apple.com/us/app/acft-calculator-and-resources/id1439376176" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 13.2c0-2.6 2.1-3.9 2.2-3.9-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.6 1.3 10.1.9 1.3 2 2.7 3.5 2.7 1.4 0 1.9-.9 3.5-.9 1.6 0 2 .9 3.4.9 1.4 0 2.3-1.3 3.2-2.6 1-1.5 1.4-3 1.4-3.1-.1 0-2.7-1-2.7-3.8zM15.1 4.6c.7-.9 1.2-2.1 1.1-3.3-1.1.1-2.4.8-3.1 1.7-.7.8-1.3 2.1-1.1 3.2 1.2.1 2.4-.7 3.1-1.6z"/></svg> App Store</a></div>
             <div class="stack"><span class="s">Swift</span><span class="s">UIKit</span><span class="s">Perf</span></div>
           </div>
@@ -300,7 +335,7 @@
         <div class="card project" data-gallery="magicneedle">
           <div>
             <h3 class="proj-title">Magic Needle — iOS + macOS</h3>
-            <p class="muted">Premium cross-stitch design suite with live preview, editing, and export across Apple platforms.</p>
+            <p class="muted">Cross-stitch design suite with image conversion, live preview, pattern tracking, editing, PDF export, and polished Apple-platform UX.</p>
             <div class="proj-links"><a class="btn" href="https://apps.apple.com/us/app/magic-needle-cross-stitch/id1323730066" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 13.2c0-2.6 2.1-3.9 2.2-3.9-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.6 1.3 10.1.9 1.3 2 2.7 3.5 2.7 1.4 0 1.9-.9 3.5-.9 1.6 0 2 .9 3.4.9 1.4 0 2.3-1.3 3.2-2.6 1-1.5 1.4-3 1.4-3.1-.1 0-2.7-1-2.7-3.8zM15.1 4.6c.7-.9 1.2-2.1 1.1-3.3-1.1.1-2.4.8-3.1 1.7-.7.8-1.3 2.1-1.1 3.2 1.2.1 2.4-.7 3.1-1.6z"/></svg> App Store</a></div>
             <div class="stack"><span class="s">iOS</span><span class="s">macOS</span><span class="s">Graphics</span></div>
           </div>
@@ -359,10 +394,9 @@
     lb.querySelector('.nav.next').addEventListener('click', ()=> show(currentKey, currentIdx+1));
     document.addEventListener('keydown', (e)=>{ if(!lb.classList.contains('open')) return; if(e.key==='Escape') hide(); if(e.key==='ArrowLeft') show(currentKey, currentIdx-1); if(e.key==='ArrowRight') show(currentKey, currentIdx+1); });
 
-    // Counters
+    // Keep key metrics readable for crawlers and browsers with JavaScript disabled.
     const counters = document.querySelectorAll('.num'); const fmtCompact = Intl.NumberFormat('en', {notation:'compact'});
-    const animateCounter = (el)=>{ const target = parseInt(el.dataset.count||'0',10); const suffix = el.dataset.suffix||''; const compact = el.dataset.format==='compact'; let cur = 0; const steps = 40; const inc = Math.max(1, Math.round(target/steps)); const tick = ()=> { cur = Math.min(target, cur + inc); el.textContent = (compact? fmtCompact.format(cur) : cur) + (cur===target ? suffix : ''); if(cur < target) requestAnimationFrame(tick); }; tick(); };
-    counters.forEach(animateCounter);
+    counters.forEach((el)=>{ const target = parseInt(el.dataset.count||'0',10); const suffix = el.dataset.suffix||''; const compact = el.dataset.format==='compact'; el.textContent = (compact ? fmtCompact.format(target) : target) + suffix; });
 
     // Reviews (replace with your real quotes)
     const upworkReviews = [
